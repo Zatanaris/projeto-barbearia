@@ -1,0 +1,387 @@
+:root {
+   font-size: 62.5%;
+
+   /*
+    *Colors
+   */
+   --primary-normal: #06121e;
+   --primary-dark: #040f1a;
+   --primary-light: #0c2135;
+
+   --secondary-normal: #090d11;
+   --secondary-dark: #06090c;
+   --secondary-light: #353436;
+
+   --black-normal: #232224;
+   --black-dark: #161617;
+   --black-light: #353436;
+
+   --white-normal: #ffffff;
+   --white-dark: #edeaef;
+   --white-light: #fefbff;
+
+   --red-normal: #d94140;
+   --red-dark: #b42b2b;
+   --red-light: #d34040;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-size: 16px;
+   font-family: "Sora", sans-serif;
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   background-color: var(--primary-normal);
+}
+
+button {
+   cursor: pointer;
+   font-family: inherit;
+}
+
+img,
+svg {
+   width: 100%;
+   display: block;
+   object-fit: cover;
+}
+
+a {
+   text-decoration: none;
+}
+
+.container {
+   max-width: 1180px;
+   margin-inline: auto;
+   padding-inline: 8px;
+}
+
+.bg-home {
+   position: relative;
+}
+
+.bg-home::before {
+   content: "";
+   display: block;
+   position: absolute;
+   background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e),
+      url("/assets/img/bg-home.jpg");
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: 50% 0;
+   opacity: 0.9;
+}
+
+.header {
+   width: 100%;
+}
+
+.navigation {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.social {
+   display: flex;
+   align-items: center;
+   gap: 1.4rem;
+}
+
+i {
+   color: var(--white-normal);
+}
+.social a:hover i {
+   color: var(--red-light);
+   animation: translateY 0.8s infinite alternate;
+}
+
+@keyframes translateY {
+   from {
+      transform: translateY(0) scale(1);
+   }
+   to {
+      transform: translateY(-8px) scale(1.1);
+   }
+}
+
+.header--button {
+   border: 1px solid var(--white-normal);
+   border-radius: 4px;
+   padding: 8px 23px;
+   background-color: transparent;
+   transition: all 300ms;
+}
+
+.header--button a {
+   color: var(--white-normal);
+}
+
+.header--button:hover {
+   border-color: var(--red-normal);
+   background-color: var(--red-dark);
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 14px;
+   transition: all 300ms;
+}
+
+.hero {
+   color: var(--white-normal);
+   height: 80vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 14px;
+}
+
+.title {
+   text-align: center;
+   line-height: 1.1;
+   max-width: 940px;
+   width: 100%;
+   font-size: clamp(24px, 2.5vw, 48px);
+   font-weight: 700;
+   padding-inline: 14px;
+}
+
+.hero--text {
+   font-size: clamp(13px, 2.5vw, 18px);
+   line-height: 27px;
+   text-align: center;
+   padding-block: 16px;
+}
+
+.btn--contact {
+   padding: 14px 28px;
+   color: var(--white-normal);
+   background-color: var(--red-normal);
+   border: 0;
+   font-size: clamp(16px, 2.5vw, 24px);
+   font-weight: 600;
+   margin-block: 14px;
+}
+
+.btn--contact:hover {
+   animation: scalebtn 0.8s alternate infinite;
+}
+
+@keyframes scalebtn {
+   from {
+      transform: scale(1);
+   }
+   to {
+      transform: scale(1.07);
+   }
+}
+
+.about {
+   background-color: var(--primary-normal);
+   overflow: hidden;
+   color: var(--white-normal);
+}
+
+.about--content {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 14px;
+   padding: 34px 14px 64px 14px;
+}
+
+.about--content > div {
+   flex: 1;
+}
+
+.about--content img {
+   max-width: 500px;
+}
+
+.heading {
+   font-size: 34px;
+   margin-bottom: 24px;
+}
+
+.about--text {
+   margin-bottom: 14px;
+   line-height: 150%;
+}
+
+.services {
+   background-color: var(--white-normal);
+   color: var(--black-normal);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 50px 14px;
+}
+
+.services--content {
+   text-align: center;
+}
+
+.services--heading {
+   margin-bottom: 14px;
+   font-size: clamp(28px, 2.5vw, 38px);
+}
+
+.services--description {
+   max-width: 780px;
+   width: 100%;
+   margin-inline: auto;
+   line-height: 150%;
+   margin-bottom: 14px;
+}
+
+.herCutes {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 16px;
+}
+
+.herCute {
+   flex: 1 1 300px;
+   display: flex;
+   flex-direction: column;
+   background-color: var(--white-normal);
+   border-radius: 8px;
+   box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.8);
+   overflow: hidden;
+}
+
+.herCute img {
+   transition: all 300ms;
+   overflow: hidden;
+}
+
+.herCute img:hover {
+   transform: scale(1.2) rotate(8deg);
+   z-index: 1;
+}
+
+.hercute--info {
+   width: 100%;
+   background-color: var(--white-normal);
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 10px;
+   z-index: 3;
+}
+
+.herBtn {
+   background-color: var(--red-normal);
+   border: 0;
+   border-radius: 4px;
+   color: var(--white-normal);
+   padding: 4px 8px;
+   font-weight: 700;
+   cursor: default;
+}
+
+.herBtn:hover {
+   background-color: var(--red-dark);
+}
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 24px;
+   padding: 50px 14px;
+   color: var(--white-normal);
+   text-align: center;
+}
+
+.btn--whatsapp {
+   position: fixed;
+   bottom: 20px;
+   right: 24px;
+   max-width: 74px;
+   width: 100%;
+   visibility: hidden;
+   pointer-events: none;
+   z-index: 99;
+}
+
+.btn--whatsapp img {
+   transition: all 300ms;
+}
+
+.btn--whatsapp img:hover {
+   transform: scale(1.1);
+}
+
+.btn--whatsapp.active {
+   visibility: visible;
+   pointer-events: visible;
+}
+
+.btn--whatsapp .tooltip--text {
+   visibility: hidden;
+   position: absolute;
+   width: 120px;
+   top: 8px;
+   left: -134px;
+   padding: 6px;
+   border-radius: 6px;
+   text-align: center;
+   background-color: var(--black-normal);
+   color: var(--white-normal);
+   opacity: 0;
+   transition: opacity 400ms;
+}
+
+.btn--whatsapp:hover .tooltip--text {
+   visibility: visible;
+   opacity: 1;
+}
+
+@media (max-width: 768px) {
+   .header {
+      padding-block: 2rem;
+   }
+   .navigation {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+   .logo {
+      width: 160px;
+      margin-top: 46px;
+   }
+   .header--button {
+      display: none;
+   }
+   .hero {
+      height: 60vh;
+   }
+   .about--content {
+      flex-direction: column;
+      gap: 24px;
+   }
+
+   .btn--whatsapp {
+      max-width: 60px;
+   }
+}
